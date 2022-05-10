@@ -25,7 +25,7 @@ public class Funcionario extends  Pessoa{
 
     @Override
     public String toString() {
-        return "Funcionario-> {Id: "+ this.id + "Nome: " + this.nome + ", CPF: " + this.cpf + ", RG: " + this.rg
+        return "Funcionario-> {Id: "+ this.id + ", Nome: " + this.nome + ", CPF: " + this.cpf + ", RG: " + this.rg
                 + ", Cargo: " + this.cargo + ", Salário: " + this.salario + "}";
     }
 }

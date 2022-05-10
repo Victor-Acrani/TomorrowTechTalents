@@ -15,6 +15,7 @@ public class Escola {
 
     public void cadastrarFuncionario(String nome, String cpf, String rg, String cargo, double salario){
         this.funcionarios.add(new Funcionario(nome, cpf, rg, cargo, salario));
+        System.out.println("Funcionário cadastrado!");
     }
 
     public void listarFuncionario(){
@@ -22,11 +23,15 @@ public class Escola {
     }
 
     public void atualizarFuncionario(long id, String nome, String cpf, String rg, String cargo, double salario){
-        this.funcionarios.stream()
-                .filter(x -> x.id == id)
-                .map(x -> x.setNome(nome));
 
     }
 
+    public void deletarFuncionario(long id){
+       if (this.funcionarios.removeIf(x-> x.id == id)){
+           System.out.println("Funcionário deletado.");
+       } else {
+           System.out.println("Esse id não existe. Favor usar um id válido.");
+       }
+    }
 
 }

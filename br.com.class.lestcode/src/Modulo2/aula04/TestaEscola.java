@@ -39,10 +39,12 @@ public class TestaEscola {
             case 3:
                 System.out.println("Atualizar cadastro");
                 opcao = validarOpcao(scanner);
+                atualizar(opcao,scanner,escola);
                 return true;
             case 4:
                 System.out.println("Deletar cadastro");
                 opcao = validarOpcao(scanner);
+                deletar(opcao,scanner,escola);
                 return true;
             case 5:
                 System.out.println("Listar cadastro específico");
@@ -91,7 +93,6 @@ public class TestaEscola {
             System.out.println("Insira o salário.");
             Double salario = scanner.nextDouble();
             escola.cadastrarFuncionario(nome,cpf,rg,cargo,salario);
-            System.out.println("Funcionário cadastrado!");
         }
         else if (opcao == 2) {
             System.out.println("----------Cadastro de Aluno----------");
@@ -124,16 +125,28 @@ public class TestaEscola {
             escola.listarFuncionario();
             System.out.println("Insira o Id do funcionário");
             long id = scanner.nextLong();
-
         }
         else if (opcao == 2) {
             System.out.println("----------Atualizar cadastro Aluno----------");
-
         }
         else if (opcao == 3) {
             System.out.println("----------Atualizar cadastro Professor----------");
-
         }
     }
 
+    private static void deletar(int opcao, Scanner scanner, Escola escola) {
+        if (opcao == 1){
+            System.out.println("----------Remover Funcionário----------");
+            escola.listarFuncionario();
+            System.out.println("Insira o Id do funcionário");
+            long id = scanner.nextLong();
+            escola.deletarFuncionario(id);
+        }
+        else if (opcao == 2) {
+            System.out.println("----------Remover Aluno----------");
+        }
+        else if (opcao == 3) {
+            System.out.println("----------Remover Professor----------");
+        }
+    }
 }
