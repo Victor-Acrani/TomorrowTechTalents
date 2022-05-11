@@ -22,24 +22,31 @@ public class Pessoa {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public Pessoa setNome(String nome) {
         this.nome = nome;
+        return this;
     }
 
     public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public Pessoa setCpf(String cpf) {
         this.cpf = cpf;
+        return this;
     }
 
     public String getRg() {
         return rg;
     }
 
-    public void setRg(String rg) {
+    public Pessoa setRg(String rg) {
         this.rg = rg;
+        return this;
+    }
+
+    public long getId() {
+        return id;
     }
 
     @Override

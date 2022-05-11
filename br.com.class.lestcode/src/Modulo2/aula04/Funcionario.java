@@ -7,6 +7,10 @@ public class Funcionario extends  Pessoa{
 
     protected static long contadorId = 0l;
 
+    public Funcionario(){
+
+    }
+
     public Funcionario(String nome, String cpf, String rg, String cargo, double salario) {
         super(nome, cpf, rg);
         this.cargo = cargo;
@@ -15,12 +19,14 @@ public class Funcionario extends  Pessoa{
         this.id = contadorId;
     }
 
-    public void setCargo(String cargo) {
+    public Funcionario setCargo(String cargo) {
         this.cargo = cargo;
+        return this;
     }
 
-    public void setSalario(double salario) {
+    public Funcionario setSalario(double salario) {
         this.salario = salario;
+        return this;
     }
 
     @Override
